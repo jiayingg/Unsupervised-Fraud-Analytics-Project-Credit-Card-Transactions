@@ -127,11 +127,14 @@ After creating the 16 variables as mentioned above, we experimented with two typ
 
 1. Conduct Principle Component Analysis and choose top components that together contribute roughly 70% to 80% of the variation. Then perform z-scaling on the top components. To calculate the fraud score, we tried different approaches:
     a) Score = sum of z-scores
+
     b) Score = average of z-scores 
 
 2. Perform z-scaling on those 16 variables. Consequently, we have 16 groups of z-scores. We explored three ways of calculating fraud score: 
     a) Score = sum of all z-scores
+
     b) Score = average of all z-scores
+    
     c) Score = weighted average of the top 4 z-scores (one for each N). For example, find the highest z-score among the groups of 4 variables for number of transactions in n days (N = 1, 2, 3, 7). Do the same for other three groups. 
 
 In both approaches, we make sure that we are only looking at the positive z-scores when calculating the final fraud score. The reason is that in this project, we are mainly interested in finding cases where the card is lost or stolen, or a bad merchant gets the card. In theses cases, records tend to have higher-than-usual amount or number of transactions in a given period. Therefore, we transformed all negative z-scores into zero to only focus on positive deviations. 
@@ -144,15 +147,9 @@ We found out that the second approach with Score = weighted average of the top 4
 
 As mentioned in Model Algorithm, we experimented with two different approaches as well as a number of ways to compute the final fraud score. We will briefly talk about the result of these algorithms and focus on the one that we decided to implement. 
 
-1.  Conduct Principle Component Analysis then z-scale
+1.Conduct Principle Component Analysis then z-scale: We chose the first two components to do z-scaling on. From the Scree plot below, we can see that the top two components can together explain the majority of the variation in the data. Then we did z-scaling on the scores of these two components. Then we tried Score = sum of z-scores and Score = average of z-scores, and they gave very similar results. We can only catch 2 fraud records in the top 10%.![Image of pca](http://i67.tinypic.com/n50wup.jpg)
 
-We chose the first two components to do z-scaling on. From the Scree plot below, we can see that the top two components can together explain the majority of the variation in the data. Then we did z-scaling on the scores of these two components. Then we tried Score = sum of z-scores and Score = average of z-scores, and they gave very similar results. We can only catch 2 fraud records in the top 10%.
-
-![Image of pca](http://i67.tinypic.com/n50wup.jpg)
-
-2.  Perform z-scaling on those 16 variables
-
-This method does better than the previous one. We calculated the z-scores associated with the 16 variables. Here again, we experimented with different ways to score. We found that taking the weighted average of the top 4 z-scores generate the best result. The top 4 z-scores are determined by finding the highest z-score among the groups of 4 variables. Specifically, find the maximum values for number of transactions and amount of transaction in n days (N = 1, 2, 3, 7) on card number entity level and merchant number entity level. Then we took a weighted average of these four z-scores. The weights are:
+2. Perform z-scaling on those 16 variables: This method does better than the previous one. We calculated the z-scores associated with the 16 variables. Here again, we experimented with different ways to score. We found that taking the weighted average of the top 4 z-scores generate the best result. The top 4 z-scores are determined by finding the highest z-score among the groups of 4 variables. Specifically, find the maximum values for number of transactions and amount of transaction in n days (N = 1, 2, 3, 7) on card number entity level and merchant number entity level. Then we took a weighted average of these four z-scores. The weights are:
 
 <table>
   <tr>
