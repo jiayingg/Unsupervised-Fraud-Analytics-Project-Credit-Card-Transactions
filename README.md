@@ -288,6 +288,7 @@ In our analysis below, we only interpreted records that had the highest fraud sc
 __Fraud type: Large transaction amount in short amount of time__
 
 Entity: CARDNUM
+
 Explanation: this cardholder made 10 transactions in one day. The merchant is the same and the amount of each transaction is huge.
 
 <table>
@@ -448,6 +449,7 @@ Explanation: this cardholder made 10 transactions in one day. The merchant is th
 </table>
 
 Entity: CARDNUM
+
 Explanation: this cardholder made 4 transactions in a very short period of time. The merchant is the same and the amount of each transaction is huge and almost identical.
 
 <table>
@@ -524,9 +526,24 @@ Explanation: this cardholder made 4 transactions in a very short period of time.
 </table>
 
 Entity: CARDNUM
+
 Explanation: our algorithm captured 4 records of this cardholder so we just put it together. Transactions of large amount in a week.
 
 <table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
   <tr>
     <th>32720</th>
     <th>5142182016</th>
@@ -600,6 +617,7 @@ Explanation: our algorithm captured 4 records of this cardholder so we just put 
 </table>
 
 Entity: CARDNUM
+
 Explanation: this cardholder made 4 transactions in a very short period of time. The amount is huge. Also it is worth further analysis how this cardholder was able to made transactions in different states in 1 day (see record #71835, #72089). Is it online transactions or not?
 
 <table>
