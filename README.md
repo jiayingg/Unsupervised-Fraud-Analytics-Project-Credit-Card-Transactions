@@ -830,6 +830,20 @@ Explanation: this type of fraud is common in our captured records. They easily g
 
 <table>
   <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
+  <tr>
     <th>40033</th>
     <th>5142125025</th>
     <th>5/31/2010</th>
