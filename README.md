@@ -119,7 +119,7 @@ We excluded the record with the highest transaction amount, to prevent it from i
 
 Below are our variables:
 
-  card_scale_trans_N=(90/N)∙(Number of transactions in the past N days on this card)/(Number of transactions in the past 90 days on this card), For N = 1, 2, 3, 7
-  card_scale_amount_N=(90/N)∙( Total transaction amount in the past N days on this card)/( Total transaction amount in the past 90 days on this card), For N = 1, 2, 3, 7
-  merch_scale_trans_N=(90/N)∙(Number of transactions in the past N days from merchant)/(Number of transactions in the past 90 days from merchant), For N = 1, 2, 3, 7
-  merch_scale_amount_N=(90/N)∙( Total trans amount in the past N days from merchant)/( Total trans amount in the past 90 days from merchant), For N = 1, 2, 3, 7
+    card_scale_trans_N=(90/N)∙(Number of transactions in the past N days on this card)/(Number of transactions in the past 90 days on this card), For N = 1, 2, 3, 7
+    card_scale_amount_N=(90/N)∙( Total transaction amount in the past N days on this card)/( Total transaction amount in the past 90 days on this card), For N = 1, 2, 3, 7
+    merch_scale_trans_N=(90/N)∙(Number of transactions in the past N days from merchant)/(Number of transactions in the past 90 days from merchant), For N = 1, 2, 3, 7
+    merch_scale_amount_N=(90/N)∙( Total trans amount in the past N days from merchant)/( Total trans amount in the past 90 days from merchant), For N = 1, 2, 3, 7
