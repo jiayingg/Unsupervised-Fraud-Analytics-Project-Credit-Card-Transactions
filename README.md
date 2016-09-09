@@ -284,3 +284,408 @@ We ranked the top 5% highest score records starting from 1 and did analysis on w
 Some records that we included in our report are not in the top 5% (the score and rank cells are empty), but we still put it there because it can help us better understand why a particular record was labeled fraud by our algorithm. Since we use the past 90 days as our definition of normal, these records may help us understand how far away our target record is from normal, and possibly also the reason why the target record was labeled as fraud.
 
 In our analysis below, we only interpreted records that had the highest fraud score (ranked as 1), and we grouped them by the type of fraud possible. Under each type of fraud, we grouped the suspicious records by the entity level that conveys more information, and analyzed each target record in context of date and entity.
+
+__Fraud type: Large transaction amount in short amount of time__
+
+Entity: CARDNUM
+Explanation: this cardholder made 10 transactions in one day. The merchant is the same and the amount of each transaction is huge.
+
+<table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
+  <tr>
+    <td>32569</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$3,640.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32587</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$3,225.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32591</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$2,250.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32625</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$700.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32667</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$14,625.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32730</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$2,100.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32765</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$2,100.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32785</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$2,475.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32815</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$2,156.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>32888</td>
+    <td>5142288601</td>
+    <td>5/4/2010</td>
+    <td>460450006HRI6</td>
+    <td>SENTINEL, INC.</td>
+    <td>AL</td>
+    <td>35801</td>
+    <td>P</td>
+    <td>$800.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+</table>
+
+Entity: CARDNUM
+Explanation: this cardholder made 4 transactions in a very short period of time. The merchant is the same and the amount of each transaction is huge and almost identical.
+
+<table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
+  <tr>
+    <td>61425</td>
+    <td>5142308889</td>
+    <td>8/11/2010</td>
+    <td>6054006890063</td>
+    <td>BAR CODE DISCOUNT WAREHOU</td>
+    <td>OH</td>
+    <td>44133</td>
+    <td>P</td>
+    <td>$2,244.50</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>62204</td>
+    <td>5142308889</td>
+    <td>8/14/2010</td>
+    <td>6054006890063</td>
+    <td>BAR CODE DISCOUNT WAREHOU</td>
+    <td>OH</td>
+    <td>44133</td>
+    <td>P</td>
+    <td>$2,241.37</td>
+    <td></td>
+    <td>2.875472119</td>
+    <td>394</td>
+  </tr>
+  <tr>
+    <td>62681</td>
+    <td>5142308889</td>
+    <td>8/15/2010</td>
+    <td>6054006890063</td>
+    <td>BAR CODE DISCOUNT WAREHOU</td>
+    <td>OH</td>
+    <td>44133</td>
+    <td>P</td>
+    <td>$2,241.37</td>
+    <td></td>
+    <td>2.875472119</td>
+    <td>394</td>
+  </tr>
+  <tr>
+    <td>62855</td>
+    <td>5142308889</td>
+    <td>8/16/2010</td>
+    <td>6054006890063</td>
+    <td>BAR CODE DISCOUNT WAREHOU</td>
+    <td>OH</td>
+    <td>44133</td>
+    <td>P</td>
+    <td>$2,241.60</td>
+    <td></td>
+    <td>2.875472119</td>
+    <td>394</td>
+  </tr>
+</table>
+
+Entity: CARDNUM
+Explanation: our algorithm captured 4 records of this cardholder so we just put it together. Transactions of large amount in a week.
+
+<table>
+  <tr>
+    <th>32720</th>
+    <th>5142182016</th>
+    <th>5/4/2010</th>
+    <th>7129011009306</th>
+    <th>CBQ-NEWPORT #2</th>
+    <th>RI</th>
+    <th></th>
+    <th>P</th>
+    <th>$2,177.40</th>
+    <th></th>
+    <th>3.887340703</th>
+    <th>1</th>
+  </tr>
+  <tr>
+    <td>32842</td>
+    <td>5142182016</td>
+    <td>5/4/2010</td>
+    <td>8006000808492</td>
+    <td>CONWAY'S TOURS/GRAY LI</td>
+    <td>RI</td>
+    <td>02864</td>
+    <td>P</td>
+    <td>$575.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>34304</td>
+    <td>5142182016</td>
+    <td>5/10/2010</td>
+    <td>89200600057</td>
+    <td>ARAMARK HYNES CON</td>
+    <td>MA</td>
+    <td>02115</td>
+    <td>P</td>
+    <td>$6,116.01</td>
+    <td></td>
+    <td>2.894465643</td>
+    <td>384</td>
+  </tr>
+  <tr>
+    <td>41411</td>
+    <td>5142182016</td>
+    <td>6/5/2010</td>
+    <td>7129011006606</td>
+    <td>CBQ-NEWPORT #1</td>
+    <td>RI</td>
+    <td>02841</td>
+    <td>P</td>
+    <td>$262.40</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>50001</td>
+    <td>5142182016</td>
+    <td>7/5/2010</td>
+    <td>8060633001300</td>
+    <td>BOSTON PARK PLAZA HOTEL</td>
+    <td>MA</td>
+    <td>02116</td>
+    <td>P</td>
+    <td>$7,947.90</td>
+    <td></td>
+    <td>1.406695437</td>
+    <td>2255</td>
+  </tr>
+</table>
+
+Entity: CARDNUM
+Explanation: this cardholder made 4 transactions in a very short period of time. The amount is huge. Also it is worth further analysis how this cardholder was able to made transactions in different states in 1 day (see record #71835, #72089). Is it online transactions or not?
+
+<table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
+  <tr>
+    <td>70305</td>
+    <td>5142310347</td>
+    <td>9/8/2010</td>
+    <td>4620006308197</td>
+    <td>A-Z SALES &amp; SERVICE INC</td>
+    <td>CO</td>
+    <td>80524</td>
+    <td>P</td>
+    <td>$1,697.30</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>71249</td>
+    <td>5142310347</td>
+    <td>9/12/2010</td>
+    <td>607990940336</td>
+    <td>TOOL &amp; ANCHOR SUPPLY #2</td>
+    <td>CO</td>
+    <td>80204</td>
+    <td>P</td>
+    <td>$2,180.00</td>
+    <td></td>
+    <td>2.894465643</td>
+    <td>384</td>
+  </tr>
+  <tr>
+    <td>71835</td>
+    <td>5142310347</td>
+    <td>9/13/2010</td>
+    <td>06-3666163370</td>
+    <td>SWINTEC CORPORATION</td>
+    <td>NJ</td>
+    <td>07074</td>
+    <td>P</td>
+    <td>$1,696.32</td>
+    <td></td>
+    <td>2.894465643</td>
+    <td>384</td>
+  </tr>
+  <tr>
+    <td>72089</td>
+    <td>5142310347</td>
+    <td>9/13/2010</td>
+    <td>604906862335</td>
+    <td>INTERMTN SAFETY SHOES SR</td>
+    <td>CO</td>
+    <td>80907</td>
+    <td>P</td>
+    <td>$496.75</td>
+    <td></td>
+    <td>2.759679847</td>
+    <td>469</td>
+  </tr>
+  <tr>
+    <td>72345</td>
+    <td>5142310347</td>
+    <td>9/14/2010</td>
+    <td>997536508333</td>
+    <td>FIVE R REPAIR INC</td>
+    <td>CO</td>
+    <td>80401</td>
+    <td>P</td>
+    <td>$509.97</td>
+    <td></td>
+    <td>2.786916818</td>
+    <td>445</td>
+  </tr>
+</table>
+
