@@ -123,3 +123,16 @@ Below are our variables:
     card_scale_amount_N=(90/N)∙( Total transaction amount in the past N days on this card)/( Total transaction amount in the past 90 days on this card), For N = 1, 2, 3, 7
     merch_scale_trans_N=(90/N)∙(Number of transactions in the past N days from merchant)/(Number of transactions in the past 90 days from merchant), For N = 1, 2, 3, 7
     merch_scale_amount_N=(90/N)∙( Total trans amount in the past N days from merchant)/( Total trans amount in the past 90 days from merchant), For N = 1, 2, 3, 7
+
+### Model Algorithm
+
+After creating the 16 variables as mentioned above, we experimented with two types of scoring algorithms: 
+
+1. Conduct Principle Component Analysis and choose top components that together contribute roughly 70% to 80% of the variation. Then perform z-scaling on the top components. To calculate the fraud score, we tried different approaches:
+ a) Score = sum of z-scores
+ b) Score = average of z-scores 
+
+2. Perform z-scaling on those 16 variables. Consequently, we have 16 groups of z-scores. We explored three ways of calculating fraud score: 
+ a) Score = sum of all z-scores
+ b) Score = average of all z-scores
+ c) Score = weighted average of the top 4 z-scores (one for each N). For example, find the highest z-score among the groups of 4 variables for number of transactions in n days (N = 1, 2, 3, 7). Do the same for other three groups. 
