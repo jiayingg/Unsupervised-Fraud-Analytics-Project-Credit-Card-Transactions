@@ -154,3 +154,134 @@ We chose the first two components to do z-scaling on. From the Scree plot below,
 
 This method does better than the previous one. We calculated the z-scores associated with the 16 variables. Here again, we experimented with different ways to score. We found that taking the weighted average of the top 4 z-scores generate the best result. The top 4 z-scores are determined by finding the highest z-score among the groups of 4 variables. Specifically, find the maximum values for number of transactions and amount of transaction in n days (N = 1, 2, 3, 7) on card number entity level and merchant number entity level. Then we took a weighted average of these four z-scores. The weights are:
 
+<table>
+  <tr>
+    <th>card_scale_trans</th>
+    <th>merch_scale_trans</th>
+    <th>card_scale_amount</th>
+    <th>merch_scale_amount</th>
+  </tr>
+  <tr>
+    <td>0.2</td>
+    <td>0.05</td>
+    <td>0.7</td>
+    <td>0.05</td>
+  </tr>
+</table>
+
+The graph bellows show the top scores:
+
+<table>
+  <tr>
+    <th>Record Number</th>
+    <th>Fraud Score</th>
+  </tr>
+  <tr>
+    <td>23911</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>23920</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>24313</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>24414</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>24451</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>24636</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>24660</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25055</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25265</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25467</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25570</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25711</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25716</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25756</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25850</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>25921</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>26426</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>27471</td>
+    <td>3.90</td>
+  </tr>
+  <tr>
+    <td>27510</td>
+    <td>3.90</td>
+  </tr>
+</table>
+
+Then we checked what percent of all fraud records can be caught by our model in the top 5% and top 10% records:
+
+<table>
+  <tr>
+    <th></th>
+    <th>Top 5%</th>
+    <th>Top 10%</th>
+  </tr>
+  <tr>
+    <td>Number of Fraud Caught</td>
+    <td>137</td>
+    <td>144</td>
+  </tr>
+  <tr>
+    <td>% of all fraud</td>
+    <td>67%</td>
+    <td>70%</td>
+  </tr>
+</table>
+
+Our model is quite robust as it captures 67% of all the fraud in the top 5% records. Later in the report, we will look into some of the top scores and explain why they are unusual. 
+
+### High Score Analysis
+
+Within fraud labeled 1~12, we caught 137 out of 206 in top 5% highest scores (about 4500 records), with most within the labels #1~#7.
+
+We ranked the top 5% highest score records starting from 1 and did analysis on why they are fraudulent. Here are some records we think are typical of each kind of fraud that our algorithm find. Each table represent one fraud, including all original information, a score for each record and a corresponding rank. 
+
+Some records that we included in our report are not in the top 5% (the score and rank cells are empty), but we still put it there because it can help us better understand why a particular record was labeled fraud by our algorithm. Since we use the past 90 days as our definition of normal, these records may help us understand how far away our target record is from normal, and possibly also the reason why the target record was labeled as fraud.
+
+In our analysis below, we only interpreted records that had the highest fraud score (ranked as 1), and we grouped them by the type of fraud possible. Under each type of fraud, we grouped the suspicious records by the entity level that conveys more information, and analyzed each target record in context of date and entity.
