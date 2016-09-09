@@ -285,7 +285,7 @@ Some records that we included in our report are not in the top 5% (the score and
 
 In our analysis below, we only interpreted records that had the highest fraud score (ranked as 1), and we grouped them by the type of fraud possible. Under each type of fraud, we grouped the suspicious records by the entity level that conveys more information, and analyzed each target record in context of date and entity.
 
-__Fraud type: Large transaction amount in short amount of time__
+***Fraud type: Large transaction amount in short amount of time***
 
 Entity: CARDNUM
 
@@ -707,3 +707,404 @@ Explanation: this cardholder made 4 transactions in a very short period of time.
   </tr>
 </table>
 
+***Fraud type: Large transaction amount compare to other transactions***
+
+Entity: CARDNUM
+
+Explanation: this type of fraud is common in our captured records. They easily got high scores because the amount is huge compared to transactions before. In order to make it clearer, we kept all the records before high score transactions regardless they have scores or not.
+
+<table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
+  <tr>
+    <td>2661</td>
+    <td>5142186335</td>
+    <td>1/13/2010</td>
+    <td>465094667331</td>
+    <td>AGILENT SAP</td>
+    <td>GA</td>
+    <td>30319</td>
+    <td>P</td>
+    <td>$299.78</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>3995</td>
+    <td>5142186335</td>
+    <td>1/19/2010</td>
+    <td>465094667331</td>
+    <td>AGILENT SAP</td>
+    <td>GA</td>
+    <td>30319</td>
+    <td>P</td>
+    <td>$163.00</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>6968</td>
+    <td>5142186335</td>
+    <td>2/1/2010</td>
+    <td>900009091152</td>
+    <td>BESSENBERG BINDERY CORP</td>
+    <td>MI</td>
+    <td>48104</td>
+    <td>P</td>
+    <td>$162.00</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>7132</td>
+    <td>5142186335</td>
+    <td>2/2/2010</td>
+    <td>465094667331</td>
+    <td>AGILENT SAP</td>
+    <td>GA</td>
+    <td>30319</td>
+    <td>P</td>
+    <td>$120.16</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>33376</td>
+    <td>5142186335</td>
+    <td>5/8/2010</td>
+    <td>08-3508724258</td>
+    <td>TOOL CRIB OF THE NORTH</td>
+    <td>ND</td>
+    <td>58201</td>
+    <td>P</td>
+    <td>$24.20</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>33642</td>
+    <td>5142186335</td>
+    <td>5/8/2010</td>
+    <td>08-3508724258</td>
+    <td>TOOL CRIB OF THE NORTH</td>
+    <td>ND</td>
+    <td>58201</td>
+    <td>P</td>
+    <td>$1,748.79</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>34278</td>
+    <td>5142186335</td>
+    <td>5/10/2010</td>
+    <td>955666251221</td>
+    <td>VALCU INSTRUMENTS</td>
+    <td>TX</td>
+    <td>77255</td>
+    <td>P</td>
+    <td>$141.85</td>
+    <td></td>
+    <td>3.211706018</td>
+    <td>228</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>40033</th>
+    <th>5142125025</th>
+    <th>5/31/2010</th>
+    <th>1988500010006</th>
+    <th>TROPICANA RESORT</th>
+    <th>NV</th>
+    <th>89109</th>
+    <th>P</th>
+    <th>$212.55</th>
+    <th></th>
+    <th></th>
+    <th>2336</th>
+  </tr>
+  <tr>
+    <td>40211</td>
+    <td>5142125025</td>
+    <td>5/31/2010</td>
+    <td>1988500010006</td>
+    <td>TROPICANA RESORT</td>
+    <td>NV</td>
+    <td>89109</td>
+    <td>P</td>
+    <td>$326.02</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>42682</td>
+    <td>5142125025</td>
+    <td>6/8/2010</td>
+    <td></td>
+    <td>RETAIL DEBIT ADJUSTMENT</td>
+    <td></td>
+    <td></td>
+    <td>P</td>
+    <td>$6,068.00</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>92769</td>
+    <td>5142125025</td>
+    <td>12/17/2010</td>
+    <td>2094890001832</td>
+    <td>S.R. COVEY LEADERSHIP CTR</td>
+    <td>UT</td>
+    <td>84606</td>
+    <td>P</td>
+    <td>$4,815.36</td>
+    <td></td>
+    <td>3.782707154</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>92849</td>
+    <td>5142125025</td>
+    <td>12/17/2010</td>
+    <td>2094890001832</td>
+    <td>S.R. COVEY LEADERSHIP CTR</td>
+    <td>UT</td>
+    <td>84606</td>
+    <td>P</td>
+    <td>$3,858.20</td>
+    <td></td>
+    <td>3.782707154</td>
+    <td>28</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
+  <tr>
+    <td>993</td>
+    <td>5142186909</td>
+    <td>1/6/2010</td>
+    <td>9013200007658</td>
+    <td>BIRCLAR ELECTRIC&amp;ELECTRIC</td>
+    <td>MI</td>
+    <td>48174</td>
+    <td>P</td>
+    <td>$2,045.00</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>22985</td>
+    <td>5142186909</td>
+    <td>3/30/2010</td>
+    <td>9233400065101</td>
+    <td>INTERNATIONAL LIBRARY</td>
+    <td>UT</td>
+    <td>84604</td>
+    <td>P</td>
+    <td>$68.60</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>23462</td>
+    <td>5142186909</td>
+    <td>3/31/2010</td>
+    <td>991904849338</td>
+    <td>AMER NATL STDS INST INC</td>
+    <td>NY</td>
+    <td>10036</td>
+    <td>P</td>
+    <td>$18.00</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>23976</td>
+    <td>5142186909</td>
+    <td>4/3/2010</td>
+    <td>972610657332</td>
+    <td>IEEE BOOK ORDERS</td>
+    <td>NJ</td>
+    <td>08855</td>
+    <td>P</td>
+    <td>$6.06</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>23995</td>
+    <td>5142186909</td>
+    <td>4/3/2010</td>
+    <td>972610657332</td>
+    <td>IEEE BOOK ORDERS</td>
+    <td>NJ</td>
+    <td>08855</td>
+    <td>P</td>
+    <td>$115.06</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>53763</td>
+    <td>5142186909</td>
+    <td>7/19/2010</td>
+    <td>9013200007658</td>
+    <td>BIRCLAR ELECTRIC&amp;ELECTRIC</td>
+    <td>MI</td>
+    <td>48174</td>
+    <td>P</td>
+    <td>$2,045.00</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+</table>
+
+***Fraud type: Suspicious merchant***
+
+Entity: MERCHNUM
+
+Explanation: This merchant has multiple merchant number, in the same zip code. Transactions made in a short period of time with high amount by a single cardholder, which is also suspicious.
+
+<table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+    <th>Fraud?</th>
+    <th>Score</th>
+    <th>Rank</th>
+  </tr>
+  <tr>
+    <td>52696</td>
+    <td>5142295584</td>
+    <td>7/14/2010</td>
+    <td>330400610006</td>
+    <td>OMNI INNER HARBOR</td>
+    <td>MD</td>
+    <td>21201</td>
+    <td>P</td>
+    <td>$3,836.25</td>
+    <td></td>
+    <td>3.887340703</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>55636</td>
+    <td>5142295584</td>
+    <td>7/25/2010</td>
+    <td>330400615555</td>
+    <td>OMNI INNER HARBOR</td>
+    <td>MD</td>
+    <td>21201</td>
+    <td>P</td>
+    <td>$6,294.00</td>
+    <td></td>
+    <td>2.102439357</td>
+    <td>1043</td>
+  </tr>
+  <tr>
+    <td>34023</td>
+    <td>5142149691</td>
+    <td>5/10/2010</td>
+    <td>330400610031</td>
+    <td>OMNI INNER HARBOR</td>
+    <td>MD</td>
+    <td>21201</td>
+    <td>P</td>
+    <td>$336.00</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>55015</td>
+    <td>5142295584</td>
+    <td>7/22/2010</td>
+    <td>330400610006</td>
+    <td>OMNI INNER HARBOR</td>
+    <td>MD</td>
+    <td>21201</td>
+    <td>P</td>
+    <td>$48.36</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>55067</td>
+    <td>5142295584</td>
+    <td>7/22/2010</td>
+    <td>330400615555</td>
+    <td>OMNI INNER HARBOR</td>
+    <td>MD</td>
+    <td>21201</td>
+    <td>P</td>
+    <td>$495.00</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+  <tr>
+    <td>57087</td>
+    <td>5142295584</td>
+    <td>7/29/2010</td>
+    <td>330400610033</td>
+    <td>OMNI INNER HARBOR</td>
+    <td>MD</td>
+    <td>21201</td>
+    <td>P</td>
+    <td>$123.75</td>
+    <td></td>
+    <td></td>
+    <td>2336</td>
+  </tr>
+</table>
